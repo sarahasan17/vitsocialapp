@@ -4,7 +4,12 @@ class ThemeHelper {
   Color backgroundColor = const Color(0xFF304886);
   Color selectedColor = const Color(0xFF30709C);
   Color unselectedColor = const Color(0xFF000000);
+  Color uploadquestioncolor = const Color(0xFFEEEEEE);
   Color bottomnavColor = const Color(0xFFE5E4E4);
+  Color textcolor = const Color(0xFF959595);
+  Color skillcolor = const Color(0xFFD9D9D9);
+  Color postbuttoncolor = const Color(0xFFB1C4F6);
+  Color paperplanecolor = const Color(0xFF4A45A3);
   Color timeColor = const Color(0xFFADADAD);
   Color white = Colors.white;
   final TextStyle font1 = const TextStyle(
