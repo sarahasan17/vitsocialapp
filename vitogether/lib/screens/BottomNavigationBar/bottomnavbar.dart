@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:vitogether_app/screens/AnswerScreen/AnswerScreen.dart';
 import 'package:vitogether_app/screens/DiscoverScreen/DiscoverScreen.dart';
@@ -28,10 +29,35 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     });
   }
 
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     ThemeHelper t = ThemeHelper();
     return Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(70.0), // here the desired height
+          child: AppBar(
+            backgroundColor: t.backgroundColor,
+            title: Container(
+              margin: const EdgeInsets.symmetric(vertical: 40),
+              width: double.infinity,
+              color: t.backgroundColor,
+              padding: const EdgeInsets.only(
+                  top: 30, left: 10, right: 10, bottom: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () => _scaffoldkey.currentState?.openDrawer(),
+                    child: Icon(CupertinoIcons.line_horizontal_3,
+                        color: t.white, size: 30),
+                  ),
+                  Icon(CupertinoIcons.bell, color: t.white, size: 30),
+                ],
+              ),
+            ),
+          ),
+        ),
         body: screen[count],
         bottomNavigationBar: Container(
           color: t.white,

@@ -23,7 +23,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
+            /*Container(
               color: t.backgroundColor,
               margin: const EdgeInsets.only(
                   top: 20, left: 25, right: 25, bottom: 25),
@@ -38,7 +38,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                   Icon(CupertinoIcons.bell, color: t.white, size: 30),
                 ],
               ),
-            ),
+            ),*/
             Flexible(
               child: Container(
                 padding:
