@@ -11,6 +11,14 @@ class AnswerScreen extends StatefulWidget {
 }
 
 class _AnswerScreenState extends State<AnswerScreen> {
+  String dropdownvalue = 'Top';
+
+  // List of items in our dropdown menu
+  var items = [
+    'Top',
+    'Earliest',
+    'Recent',
+  ];
   @override
   Widget build(BuildContext context) {
     ThemeHelper t = ThemeHelper();
@@ -114,15 +122,39 @@ class _AnswerScreenState extends State<AnswerScreen> {
                         const Divider(
                           thickness: 2,
                         ),
-                        Row(
-                          children: [
-                            const Icon(Icons.trending_down),
-                            Text('Top', style: t.font2),
-                            const Icon(
-                              Icons.keyboard_arrow_down_outlined,
-                              size: 35,
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          child: DropdownButton(
+                            // Initial Value
+                            value: dropdownvalue,
+
+                            // Down Arrow Icon
+                            icon: const Icon(
+                              Icons.keyboard_arrow_down,
+                              size: 30,
                             ),
-                          ],
+
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    const Icon(Icons.trending_down),
+                                    Text(items, style: t.font2),
+                                  ],
+                                ),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropdownvalue = newValue!;
+                              });
+                            },
+                          ),
                         ),
                         Flexible(
                           child: ListView.builder(

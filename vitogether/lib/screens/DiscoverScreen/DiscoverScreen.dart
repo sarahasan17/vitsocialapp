@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vitogether_app/screens/SideNavigationDrawer/sidenavigationdrawer.dart';
 import '../../constants/Themehelper.dart';
 import '../../constants/screen_width.dart';
 
@@ -13,6 +12,14 @@ class DiscoverScreen extends StatefulWidget {
 
 class _DiscoverScreenState extends State<DiscoverScreen> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
+  String dropdownvalue = 'Top';
+
+  // List of items in our dropdown menu
+  var items = [
+    'Top',
+    'Earliest',
+    'Recent',
+  ];
   @override
   Widget build(BuildContext context) {
     ThemeHelper t = ThemeHelper();
@@ -55,19 +62,49 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                         style: t.font1,
                       ),
                     ),
-                    Row(
-                      children: [
-                        const Icon(Icons.filter_alt_sharp),
-                        SizedBox(width: s.width / 40),
-                        Text('Filter', style: t.font2),
-                        SizedBox(width: s.width / 2.1),
-                        const Icon(Icons.trending_down),
-                        Text('Top', style: t.font2),
-                        const Icon(
-                          Icons.keyboard_arrow_down_outlined,
-                          size: 35,
-                        ),
-                      ],
+                    Container(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.filter_alt_sharp),
+                          SizedBox(width: s.width / 40),
+                          Text('Filter', style: t.font2),
+                          SizedBox(width: s.width / 2.4),
+                          Container(
+                            alignment: Alignment.centerRight,
+                            child: DropdownButton(
+                              // Initial Value
+                              value: dropdownvalue,
+
+                              // Down Arrow Icon
+                              icon: const Icon(
+                                Icons.keyboard_arrow_down,
+                                size: 30,
+                              ),
+
+                              // Array list of items
+                              items: items.map((String items) {
+                                return DropdownMenuItem(
+                                  value: items,
+                                  child: Row(
+                                    children: [
+                                      const Icon(Icons.trending_down),
+                                      Text(items, style: t.font2),
+                                    ],
+                                  ),
+                                );
+                              }).toList(),
+                              // After selecting the desired option,it will
+                              // change button value to selected value
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  dropdownvalue = newValue!;
+                                });
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 10,
