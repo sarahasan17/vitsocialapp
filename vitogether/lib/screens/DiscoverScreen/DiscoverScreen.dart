@@ -18,8 +18,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
     ThemeHelper t = ThemeHelper();
     ScreenWidth s = ScreenWidth(context);
     return Scaffold(
-      key: _scaffoldkey,
-      drawer: const SideNavDrawer(),
       body: SafeArea(
         child: Column(
           children: [

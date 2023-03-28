@@ -6,6 +6,7 @@ import 'package:vitogether_app/screens/DiscoverScreen/DiscoverScreen.dart';
 import 'package:vitogether_app/screens/PostQuestionScreen/postquestionscreen.dart';
 
 import '../../constants/Themehelper.dart';
+import '../SideNavigationDrawer/sidenavigationdrawer.dart';
 
 class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen({Key? key}) : super(key: key);
@@ -34,26 +35,26 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     ThemeHelper t = ThemeHelper();
     return Scaffold(
+        key: _scaffoldkey,
+        drawer: const SideNavDrawer(),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(70.0), // here the desired height
           child: AppBar(
+            iconTheme: IconThemeData(size: 32, color: t.white),
             backgroundColor: t.backgroundColor,
-            title: Container(
-              margin: const EdgeInsets.symmetric(vertical: 40),
-              width: double.infinity,
-              color: t.backgroundColor,
+            title: Padding(
               padding: const EdgeInsets.only(
-                  top: 30, left: 10, right: 10, bottom: 25),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () => _scaffoldkey.currentState?.openDrawer(),
-                    child: Icon(CupertinoIcons.line_horizontal_3,
-                        color: t.white, size: 30),
-                  ),
-                  Icon(CupertinoIcons.bell, color: t.white, size: 30),
-                ],
+                  top: 30, left: 20, right: 10, bottom: 25),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 40),
+                width: double.infinity,
+                color: t.backgroundColor,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(CupertinoIcons.bell, color: t.white, size: 30),
+                  ],
+                ),
               ),
             ),
           ),

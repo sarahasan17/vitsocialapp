@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     ThemeHelper t = ThemeHelper();
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: t.backgroundColor),
-      home: const BottomNavScreen(),
+      home: BottomNavScreen(),
     );
   }
 }
