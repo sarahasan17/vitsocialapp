@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:vitogether_app/screens/AnswerScreen/AnswerScreen.dart';
 import 'package:vitogether_app/screens/DiscoverScreen/DiscoverScreen.dart';
 import 'package:vitogether_app/screens/PostQuestionScreen/postquestionscreen.dart';
+import 'package:vitogether_app/screens/TeamSearchScreen/teammateSearchScreen.dart';
 
 import '../../constants/Themehelper.dart';
 import '../SideNavigationDrawer/sidenavigationdrawer.dart';
@@ -21,7 +22,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     const DiscoverScreen(),
     AnswerScreen(),
     const PostQuestionScreen(),
-    DiscoverScreen(),
+    const TeamMateSearchScreen(),
     DiscoverScreen()
   ];
   void ontap(int index) {

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     ThemeHelper t = ThemeHelper();
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: t.backgroundColor),
-      home: TeamMateSearchScreen(),
+      home: BottomNavScreen(),
     );
   }
 }
