@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vitogether_app/constants/Themehelper.dart';
 import 'package:vitogether_app/constants/screen_width.dart';
-
-import '../SideNavigationDrawer/sidenavigationdrawer.dart';
 
 class TeamMateSearchScreen extends StatefulWidget {
   const TeamMateSearchScreen({Key? key}) : super(key: key);
@@ -58,7 +55,7 @@ class _TeamMateSearchScreenState extends State<TeamMateSearchScreen> {
                                       'assets/images/' + image[index],
                                     ),
                                     fit: BoxFit.fitHeight))),
-                        Container(
+                        SizedBox(
                           width: s.width / 1.2,
                           child: Text(
                             text1[index],
@@ -67,7 +64,7 @@ class _TeamMateSearchScreenState extends State<TeamMateSearchScreen> {
                           ),
                         ),
                         SizedBox(height: s.height / 30),
-                        Container(
+                        SizedBox(
                           width: s.width / 1.3,
                           child: Text(
                             text2[index],

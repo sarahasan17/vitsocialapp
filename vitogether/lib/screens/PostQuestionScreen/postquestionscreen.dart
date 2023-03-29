@@ -107,7 +107,7 @@ class _PostQuestionScreenState extends State<PostQuestionScreen> {
                     ),
                     SingleChildScrollView(
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         height: 80,
                         width: double.maxFinite,
                         decoration: BoxDecoration(
