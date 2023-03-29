@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ThemeHelper {
   Color backgroundColor = const Color(0xFF304886);
+  Color findteambuttonColor = const Color(0xFF30709C);
   Color selectedColor = const Color(0xFF30709C);
   Color unselectedColor = const Color(0xFF000000);
   Color uploadquestioncolor = const Color(0xFFEEEEEE);
@@ -10,6 +11,8 @@ class ThemeHelper {
   Color skillcolor = const Color(0xFFD9D9D9);
   Color postbuttoncolor = const Color(0xFFB1C4F6);
   Color paperplanecolor = const Color(0xFF4A45A3);
+  final TextStyle poppinstext = const TextStyle(
+      fontFamily: 'Poppins', fontSize: 35, fontWeight: FontWeight.w600);
   Color timeColor = const Color(0xFFADADAD);
   Color white = Colors.white;
   final TextStyle font1 = const TextStyle(
@@ -18,6 +21,8 @@ class ThemeHelper {
       fontFamily: 'Roboto', fontSize: 16, fontWeight: FontWeight.w600);
   final TextStyle font3_Inter = const TextStyle(
       fontFamily: 'Inter Regular', fontSize: 13, fontWeight: FontWeight.w400);
+  final TextStyle Inter_findteam = const TextStyle(
+      fontFamily: 'Inter Regular', fontSize: 14, fontWeight: FontWeight.w400);
   final TextStyle font4_sans = const TextStyle(
       fontFamily: 'OpenSans',
       fontSize: 15,

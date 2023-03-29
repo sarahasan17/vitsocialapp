@@ -50,3 +50,6 @@ flutter:
     - family: OpenSans
       fonts:
         - asset: assets/fonts/OpenSans-VariableFont.ttf
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins.ttf
